@@ -1,0 +1,21 @@
+# Data Ingestion & Manipulation
+pandas>=2.0.0
+openpyxl>=3.1.0
+
+# Database & ORM
+SQLAlchemy>=2.0.0
+psycopg2-binary>=2.9.0
+
+# Analytics & SQL Execution
+ipython-sql>=0.5.0
+numpy>=1.24.0
+
+# Visual Analytics
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.14.0
+
+# Jupyter Environment
+jupyterlab>=4.0.0
+notebook>=6.5.0
+python-dotenv>=1.0.0
