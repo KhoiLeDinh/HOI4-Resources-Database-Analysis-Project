@@ -22,4 +22,4 @@ def get_top_resources(limit: int = 10) -> pd.DataFrame:
 
 if __name__ == "__main__":
     print("Top 5 Resources Powers:")
-    print(get_top_resource_countries(5)[["country_name", "total_resources", "total_steel", "total_oil"]])
+    print(get_top_resources(5)[["country_name", "total_resources", "total_steel", "total_oil"]])
