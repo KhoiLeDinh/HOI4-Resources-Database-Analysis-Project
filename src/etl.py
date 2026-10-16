@@ -9,7 +9,7 @@ def run_etl(excel_filepath=str):
     print(f"Parsing HOI4 Excel Sheet from {excel_filepath}")
     df = pd.read_excel(excel_filepath, sheet_name='HOI4v 1.14.4 countries')
 
-    df.columns = [col.strip() for col in df.columns()]
+    df.columns = [col.strip() for col in df.columns]
 
     print("Extracting and lodaing unique countries into 'dim_country' ...")
     df_countries = df[["Owner Tag", "Country Name"]].drop_duplicates().dropna()
