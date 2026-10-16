@@ -17,7 +17,7 @@ def run_etl(excel_filepath=str):
     df_countries["country_tag"] = df_countries["country_tag"].astype(str).str.strip()
     df_countries["country_name"] = df_countries["country_name"].astype(str).str.strip()
 
-    df_countries.tosql("dim_country", engine, if_exists="append", index=False)
+    df_countries.to_sql("dim_country", engine, if_exists="append", index=False)
 
     print("Mapping state metrics and loading into 'fact_state_1_14_5' ...")
     column_mapping = {
