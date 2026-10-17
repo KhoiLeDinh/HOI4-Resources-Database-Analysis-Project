@@ -14,5 +14,6 @@ class Base(DeclarativeBase):
 
 def init_db():
     import src.models
+    Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(bind=engine)
     

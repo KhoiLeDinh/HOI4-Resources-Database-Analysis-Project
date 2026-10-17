@@ -45,8 +45,10 @@ def run_etl(excel_filepath=str):
     }
 
     df_facts = df[list(column_mapping.keys())].rename(columns=column_mapping)
+    df_facts = df_facts.dropna(subset=["state_id", "owner_tag"])
+    df_facts = df_facts.fillna(0)
     df_facts["state_id"] = df_facts["state_id"].astype(int)
-    df_facts["owner_target"] = df_facts["owner_tag"].astype(str).str.strip()
+    df_facts["owner_tag"] = df_facts["owner_tag"].astype(str).str.strip()
     df_facts.to_sql("fact_state_1_14_5", engine, if_exists="append", index=False)
     print("✅ Ingestion complete! All state resource records loaded into PostgreSQL.")
 
